@@ -1,5 +1,6 @@
 # Práctica 1.1. Instalación del software de la base de datos Oracle 19c
 
+
 <br/><br/>
 
 ## Objetivos
