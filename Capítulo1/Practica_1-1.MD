@@ -81,8 +81,23 @@ Durante esta práctica, debes asegurarte de contar con los siguientes archivos Z
 | `ORACLE_BASE` | `/u01/app/oracle`                      |
 | `ORACLE_HOME` | `/u01/app/oracle/product/19c/dbhome_1` |
 | `PATH`        | `$PATH:$ORACLE_HOME/bin`               |
+| `CV_ASSUME_DISTID` | `OEL7`                          |
 
 <br/>
+
+> Nota Importante sobre compatibilidad del sistema operativo 
+
+Oracle Database 19c valida la distribución del sistema operativo durante la fase supportedOSCheck del instalador (Oracle Universal Installer).
+En versiones más recientes de Oracle Linux (por ejemplo, OL8 u OL9), esta validación puede fallar debido a que el instalador fue certificado originalmente para Oracle Linux 7.
+
+Para evitar este error y permitir que la instalación continúe, se debe definir previamente la siguiente variable de entorno en la sesión del usuario oracle:
+
+```bash
+cat /etc/os-release
+export CV_ASSUME_DISTID=OEL7
+```
+<br/>
+
 
 #### **Paso 5.** Ejecuta el instalador del software, con el usuario `oracle`:
 
