@@ -48,14 +48,31 @@ Durante esta práctica, debes asegurarte de contar con los siguientes archivos Z
 <br/>
 
 #### **Paso 1.** Verifica que todos los productos de software necesarios para instalar Oracle 19c estén descargados en el directorio `Downloads`.
-
+   ```
+   ls Downloads
+   # crea y cambiate al directorio scripts
+   mkdir scripts
+   cd scripts
+   # Crea el archivo setEnv.sh con el siguiente contenido
+   vi setEnv.sh
+   mkdir -p /u01/app/oracle/product/19c/dbhome_1
+   chown -R oracle:oinstall /u01
+   chmod -R 775 /u01
+   :wq!
+   ```
 <br/>
 
-#### **Paso 2.** Desde la cuenta `oracle`, ejecuta el comando:
+#### **Paso 2.** Desde la cuenta `root`, ejecuta el comando:
 
    ```
+   su 
+   Password: Oracle1
    dnf search preinstall
    dnf install oracle-database-preinstall-19c.x86_64
+   # Cambiate al directorio scripts y ejecuta el shell setEnv.sh
+   cd /home/oracle/scripts
+   sh setEnv.sh
+   exit
    ```
 <br/>
 
