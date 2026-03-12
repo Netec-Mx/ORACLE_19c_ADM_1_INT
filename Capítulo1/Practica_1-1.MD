@@ -50,9 +50,11 @@ Durante esta práctica, debes asegurarte de contar con los siguientes archivos Z
 #### **Paso 1.** Verifica que todos los productos de software necesarios para instalar Oracle 19c estén descargados en el directorio `Downloads`.
    ```
    ls Downloads
+
    # crea y cambiate al directorio scripts
    mkdir scripts
    cd scripts
+
    # Crea el archivo setEnv.sh con el siguiente contenido
    vi setEnv.sh
    mkdir -p /u01/app/oracle/product/19c/dbhome_1
