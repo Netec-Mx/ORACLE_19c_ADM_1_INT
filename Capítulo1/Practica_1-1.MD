@@ -71,6 +71,7 @@ Durante esta práctica, debes asegurarte de contar con los siguientes archivos Z
    Password: Oracle1
    dnf search preinstall
    dnf install oracle-database-preinstall-19c.x86_64
+
    # Cambiate al directorio scripts y ejecuta el shell setEnv.sh
    cd /home/oracle/scripts
    sh setEnv.sh
