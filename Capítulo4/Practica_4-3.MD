@@ -23,7 +23,6 @@ Al finalizar esta práctica, serás capaz de:
   <em>Source: docs.oracle.com </em>
 </p>
 
-
 <br/><br/>
 
 ## Tabla de ayuda
