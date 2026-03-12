@@ -70,7 +70,7 @@ La siguiente captura de pantalla muestra el final del Database Configuration Ass
 
 #### **Paso 3.** Define los nombres principales.
 
-   * `Global Database Name`: `localhost.localdomain` (o uno personalizado).
+   * `Global Database Name`: `pdb.localhost.localdomain` (o uno personalizado).
    * `Pluggable Database Name`: `pdb` (puede ajustarse según necesidad).
    * `SID`: igual al nombre de la base de datos (por ejemplo, `orcl`).
 
@@ -87,7 +87,7 @@ La siguiente captura de pantalla muestra el final del Database Configuration Ass
 
    * `Storage type`: `File System`.
    * `Database files location`: `{ORACLE_BASE}/oradata/{DB_UNIQUE_NAME}`.
-   * Activa `Use Oracle Managed Files (OMF)` para una gestión automática de archivos (opcional).
+   * Activa `Use Oracle Managed Files (OMF)` para una gestión automática de archivos (no elegir por el momento).
 
 <br/>
 
@@ -117,7 +117,7 @@ La siguiente captura de pantalla muestra el final del Database Configuration Ass
 
 #### **Paso 9.** Ajusta la configuración de instancia (Configuration Options).
 
-   * `Memory`: usa `Automatic Shared Memory Management`.
+   * `Memory`: usa `Automatic Shared Memory Management`. (Dejar los valores que muestre por default).
    * `Sizing`: usa `Processes 320`.
    * `Character set`: `AL32UTF8`.
    * `Connection mode`: `Dedicated server mode`.
