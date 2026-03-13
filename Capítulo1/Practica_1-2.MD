@@ -120,14 +120,13 @@ La siguiente captura de pantalla muestra el final del Database Configuration Ass
 #### **Paso 9.** Configura las herramientas de gestión.
    * Marca `Configure Enterprise Manager (EM) Database Express`.
    * `Port`: `5500`.
-
+   Deja sin marcar las demas opciones.
 <br/>
 
 #### **Paso 11.** Define las contraseñas administrativas.
 
    * Selecciona `Use the same administrative password for all accounts`.
-   * Asigna una contraseña y confírmala (por ejemplo, `oracle_4U`).
-
+   * Asigna una contraseña y confírmala (usa el siguiente password, `oracle_4U`).
 <br/>
 
 #### **Paso 12.** Finaliza la creación.
