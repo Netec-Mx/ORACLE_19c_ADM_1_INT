@@ -73,7 +73,7 @@ La siguiente captura de pantalla muestra el final del Database Configuration Ass
 
 #### **Paso 3.** Define los nombres principales.
 
-   * `Global Database Name`: `pdb.localhost.localdomain` (o uno personalizado).
+   * `Global Database Name`: `pdb.localhost.localdomain` (usa la opcion default que aparezca).
    * `Pluggable Database Name`: `pdb` (puede ajustarse según necesidad).
    * `SID`: igual al nombre de la base de datos (por ejemplo, `orcl`).
 
