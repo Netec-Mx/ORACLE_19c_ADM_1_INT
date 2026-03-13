@@ -76,46 +76,35 @@ La siguiente captura de pantalla muestra el final del Database Configuration Ass
    * `Global Database Name`: `pdb.localhost.localdomain` (preferentemente usa la opcion default que aparezca).
    * `Pluggable Database Name`: `pdb` (puede ajustarse según necesidad).
    * `SID`: igual al nombre de la base de datos (por ejemplo, `orcl`).
-
 <br/>
 
 #### **Paso 4.** Opcion de almacenamiento.
 
-   * `Storage Option:`: Elige `Use following for the database storage attributes`.
+   * `Storage Option:`
+   *  Elige `Use following for the database storage attributes`.
    * `Storage type`: `File System`.
    * `Database files location`: `{ORACLE_BASE}/oradata/{DB_UNIQUE_NAME}`.
    *  No elegir: `Use Oracle Managed Files (OMF)` para una gestión automática de archivos.
 <br/>
 
-
-#### **Paso 5.** Define las opciones de almacenamiento.
-
-
-
-<br/>
-
-#### **Paso 6.** Configura el área de recuperación rápida (FRA).
+#### **Paso 5.** Configura el área de recuperación rápida (FRA).
 
    * Marca `Specify Fast Recovery Area`.
    * Ruta: `{ORACLE_BASE}/fast_recovery_area/{DB_UNIQUE_NAME}`.
    * Asigna un tamaño suficiente (por ejemplo, 14 GB).
    * Puedes dejar desmarcada la opción `Enable Archiving` si se trata de un entorno de práctica.
-
-
 <br/>
 
-#### **Paso 7.** Configura el listener de red.
+#### **Paso 6.** Configura el listener de red.
 
+   Elige la opción: `Create a new listener`.
    * `Listener name`: `LISTENER`.
    * `Port`: `1521`.
-   * Deja seleccionada la opción `Create a new listener`.
-
 <br/>
 
-#### **Paso 8.** Desactiva las opciones avanzadas de seguridad.
+#### **Paso 7.** Desactiva las opciones avanzadas de seguridad.
 
    * Deja sin marcar `Database Vault` y `Label Security`.
-
 <br/>
 
 #### **Paso 9.** Ajusta la configuración de instancia (Configuration Options).
