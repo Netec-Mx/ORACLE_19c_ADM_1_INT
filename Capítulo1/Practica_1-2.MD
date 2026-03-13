@@ -49,7 +49,7 @@ La siguiente captura de pantalla muestra el final del Database Configuration Ass
    ```bash
    # Edita el archivo .bashrc y agrega la siguiente linea al final
    vi .bashrc
-   export CV_ASSUME_DISTID=OEL7.9
+   export CV_ASSUME_DISTID=OEL7
 
    # Vuelve a ejecutar el archivo .bashrc
    . ./.bashrc
