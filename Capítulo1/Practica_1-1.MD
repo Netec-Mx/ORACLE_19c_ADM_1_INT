@@ -89,8 +89,8 @@ Durante esta práctica, debes asegurarte de contar con los siguientes archivos Z
 #### **Paso 3.** Como usuario `oracle`, descomprime el archivo ZIP del software de base de datos (por ejemplo `LINUX.X64_193000_db_home.zip`) en la ubicación del DB Home.
 
    ```
-   cd Downloads
-   unzip LINUX.X64_193000_db_home.zip -d /u01/app/oracle/product/19.0.0/dbhome_1
+   cd $HOME/Downloads
+   unzip LINUX.X64_193000_db_home.zip -d /u01/app/oracle/product/19c/dbhome_1
    ```
 <br/>
 
