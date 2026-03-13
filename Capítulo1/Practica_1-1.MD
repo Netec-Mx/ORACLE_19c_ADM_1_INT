@@ -57,7 +57,7 @@ Durante esta práctica, debes asegurarte de contar con los siguientes archivos Z
 
    # Crea el archivo setEnv.sh con el siguiente contenido
    vi setEnv.sh
-   mkdir -p /u01/app/oracle/product/19c/dbhome_1
+   mkdir -p /u01/app/oracle/product/19.0.0/dbhome_1
    chown -R oracle:oinstall /u01
    chmod -R 775 /u01
    :wq!
@@ -83,7 +83,7 @@ Durante esta práctica, debes asegurarte de contar con los siguientes archivos Z
 
    ```
    cd Downloads
-   unzip LINUX.X64_193000_db_home.zip -d /u01/app/oracle/product/19c/dbhome_1
+   unzip LINUX.X64_193000_db_home.zip -d /u01/app/oracle/product/19.0.0/dbhome_1
    ```
 <br/>
 
