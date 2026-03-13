@@ -47,7 +47,10 @@ La siguiente captura de pantalla muestra el final del Database Configuration Ass
 #### **Paso 1.** Ejecuta el DBCA como usuario `oracle`.
 
    ```bash
-   # Edita el archivo .bashrc y agrega la siguiente linea al final
+   # Verifica que la variable CV_ASSUME_DISTID=OEL7 exista en el ambiente del shell.
+   env|grep CV
+
+   # Si la variable no existe, edita el archivo .bashrc y agrega la siguiente linea al final
    vi .bashrc
    export CV_ASSUME_DISTID=OEL7
 
