@@ -34,7 +34,7 @@ La siguiente captura de pantalla muestra el final del Database Configuration Ass
 | `ORACLE_BASE_HOME`        | `/u01/app/oracle/product/19c/dbhome_1` | Es el directorio donde se instaló el software de la base de datos Oracle (el Oracle Home).      |
 | `DB_UNIQUE_NAME`          | `orcl`                                 | Nombre único global asignado a la base de datos; se utiliza para definir las rutas de archivos. |
 | `ORACLE_BASE`             | `/u01/app/oracle`                      | Directorio base de la instalación de Oracle; raíz de la estructura de directorios.              |
-| `PDB_NAME`                | `pdb1`                                 | Nombre de la base de datos conectable (Pluggable Database) configurada.                         |
+| `PDB_NAME`                | `pdb`                                 | Nombre de la base de datos conectable (Pluggable Database) configurada.                         |
 | `DB_NAME`                 | `orcl`                                 | Nombre principal de la base de datos.                                                           |
 | `ORACLE_HOME`             | `/u01/app/oracle/product/19c/dbhome_1` | Sinónimo de `ORACLE_BASE_HOME`.                                                                 |
 | `SID`                     | `orcl`                                 | Identificador único de la instancia de Oracle en el sistema operativo.                           |
@@ -73,7 +73,7 @@ La siguiente captura de pantalla muestra el final del Database Configuration Ass
 
 #### **Paso 3.** Define los nombres principales.
 
-   * `Global Database Name`: `pdb.localhost.localdomain` (usa la opcion default que aparezca).
+   * `Global Database Name`: `pdb.localhost.localdomain` (preferentemente usa la opcion default que aparezca).
    * `Pluggable Database Name`: `pdb` (puede ajustarse según necesidad).
    * `SID`: igual al nombre de la base de datos (por ejemplo, `orcl`).
 
