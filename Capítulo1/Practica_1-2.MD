@@ -107,17 +107,17 @@ La siguiente captura de pantalla muestra el final del Database Configuration Ass
    * Deja sin marcar `Database Vault` y `Label Security`.
 <br/>
 
-#### **Paso 9.** Ajusta la configuración de instancia (Configuration Options).
-
+#### **Paso 8.** Configuration Options. Ajusta la configuración de instancia.
+   En cada una de las opciones verifica lo siguiente:
    * `Memory`: usa `Automatic Shared Memory Management`. (Dejar los valores que muestre por default).
    * `Sizing`: usa `Processes 320`.
    * `Character set`: `AL32UTF8`.
    * `Connection mode`: `Dedicated server mode`.
-   * Marca `Add sample schemas to the database`.
+   * Elegir `Add sample schemas to the database`.
 
 <br/>
 
-#### **Paso 10.** Configura las herramientas de gestión.
+#### **Paso 9.** Configura las herramientas de gestión.
    * Marca `Configure Enterprise Manager (EM) Database Express`.
    * `Port`: `5500`.
 
