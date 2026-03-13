@@ -79,18 +79,18 @@ La siguiente captura de pantalla muestra el final del Database Configuration Ass
 
 <br/>
 
-#### **Paso 4.** Configura el tipo de base de datos y la plantilla.
+#### **Paso 4.** Opcion de almacenamiento.
 
-   * `Database type`: `Oracle Single Instance database`.
-   * `Template name`: `General Purpose or Transaction Processing`.
-
+   * `Storage Option:`: Elige `Use following for the database storage attributes`.
+   * `Storage type`: `File System`.
+   * `Database files location`: `{ORACLE_BASE}/oradata/{DB_UNIQUE_NAME}`.
+   *  No elegir: `Use Oracle Managed Files (OMF)` para una gestión automática de archivos.
 <br/>
+
 
 #### **Paso 5.** Define las opciones de almacenamiento.
 
-   * `Storage type`: `File System`.
-   * `Database files location`: `{ORACLE_BASE}/oradata/{DB_UNIQUE_NAME}`.
-   * Activa `Use Oracle Managed Files (OMF)` para una gestión automática de archivos (no elegir por el momento).
+
 
 <br/>
 
