@@ -130,7 +130,7 @@ Durante esta práctica, debes asegurarte de contar con los siguientes archivos Z
 6.4. **Installation Location.** Verifica que las rutas de instalación sean correctas:
 
    * **Oracle Base:** `/u01/app/oracle`
-   * **Oracle Home:** `/u01/app/oracle/product/19c/dbhome_1`
+   * **Oracle Home:** `/u01/app/oracle/product/19.0.0/dbhome_1`
 
 6.5. **Create Inventory.** Confirma la ruta del archivo de inventario, generalmente:
 
