@@ -60,7 +60,7 @@ Durante esta práctica, debes asegurarte de contar con los siguientes archivos Z
    cd scripts
 
    # Crea el archivo setEnv.sh con el siguiente contenido
-   vi setEnv.sh
+   vi creaEnv.sh
    mkdir -p /u01/app/oracle/product/19c/dbhome_1
    chown -R oracle:oinstall /u01
    chmod -R 775 /u01
