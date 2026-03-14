@@ -79,9 +79,9 @@ Durante esta práctica, debes asegurarte de contar con los siguientes archivos Z
    dnf search preinstall
    dnf install oracle-database-preinstall-19c.x86_64
 
-   # Cambiate al directorio scripts y ejecuta el shell setEnv.sh
+   # Cambiate al directorio scripts y ejecuta el shell creaEnv.sh
    cd /home/oracle/scripts
-   sh setEnv.sh
+   sh creaEnv.sh
    exit
    ```
 <br/>
