@@ -59,7 +59,7 @@ Durante esta práctica, debes asegurarte de contar con los siguientes archivos Z
    mkdir scripts
    cd scripts
 
-   # Crea el archivo setEnv.sh con el siguiente contenido
+   # Crea el archivo creaEnv.sh con el siguiente contenido
    vi creaEnv.sh
    mkdir -p /u01/app/oracle/product/19c/dbhome_1
    chown -R oracle:oinstall /u01
@@ -99,10 +99,6 @@ Durante esta práctica, debes asegurarte de contar con los siguientes archivos Z
    ```
    $ env | grep ORA
    ```
-
-<br/>
-
-#### **Variables de entorno**
 
 | Variable      | Valor                                  |
 | ------------- | -------------------------------------- |
