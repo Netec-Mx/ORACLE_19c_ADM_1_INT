@@ -66,7 +66,23 @@ Al finalizar la práctica, serás capaz de:
 #### **Paso 1.** Conéctate directamente a la **PDB** utilizando el usuario `SYS`.
 
    ```bash
-   $ sqlplus sys/oracle_4U@localhost/pdb as sysdba
+   # Cambiate al directorio $ORACLE_HOME/network/admin y edita el archivo tnsnames.ora
+   vi tnsnames.ora
+   
+   # Agrega la siguientes lineas, usa el nombre del host y el dominio que tengas asignado.
+   # En este ejemplo el nombre del host es: ol8t  y el dominio: internal.cloudapp.net
+
+   PDB =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = ol8t.internal.cloudapp.net)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = pdb.internal.cloudapp.net)
+    )
+  )
+
+   # Conectate a la PDB con el siguiente comando:
+   sqlplus sys/oracle_4U@pdb as sysdba
    ```
 
 #### **Paso 2.** Verifica el contenedor activo:
@@ -79,7 +95,7 @@ Al finalizar la práctica, serás capaz de:
 #### **Paso 3.** También puedes conectarte como usuario `SYSTEM`:
 
    ```bash
-   $ sqlplus system/oracle_4U@localhost/pdb
+   $ sqlplus system/oracle_4U@pdb
    ```
    
 #### **Paso 4.** Dentro de SQLPlus, verifica nuevamente.
