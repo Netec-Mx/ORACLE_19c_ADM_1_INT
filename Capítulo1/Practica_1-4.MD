@@ -34,8 +34,17 @@ Al finalizar la práctica, serás capaz de:
 ## Instrucciones 
 
 #### **Paso 1.** Asegúrate de tener instalado un **JDK**. Si no lo tienes, descárgalo (SQL Developer soporta **Oracle JDK 17**).
+   ```bash
+   su -
+   password: Oracle1
+   cd Downloads
+   # Verifica que tengas instalado el JDK de Java 17
+   java --version
 
-#### **Paso 2.** Instala el paquete ejecutando el comando:
+   # En caso de que no exista o tengas una version anterior a la 17 ejecuta el siguiente comando
+   rpm -i  jdk-17.0.10_linux-x64_bin.rpm
+   ```
+#### **Paso 2.** Instala el paquete de SqlDeveloper ejecutando el comando:
 
    ```bash
    rpm -Uhv sqldeveloper-(build number)-1.noarch.rpm
@@ -44,22 +53,22 @@ Al finalizar la práctica, serás capaz de:
 #### **Paso 3.** Accede al directorio de instalación.
 
    ```bash
-   cd sqldeveloper
+   whereis sqldeveloper
    ```
 
 #### **Paso 4.** Ejecuta el script de inicio.
 
    ```bash
-   ./sqldeveloper.sh
+   /usr/local/bin/sqldeveloper
    ```
 
-#### **Paso 5.** Cuando se te solicite, introduce la ruta del `JDK`, por ejemplo:
+#### **Paso 5.(Opcional)** Cuando se te solicite, introduce la ruta del `JDK`, por ejemplo:
 
    ```bash
    /usr/java/jdk-17
    ```
 
-#### **Paso 6.** SQL Developer se iniciará automáticamente una vez que se proporcione la ubicación del JDK.
+#### **Paso 6.(Opcional)** SQL Developer se iniciará automáticamente una vez que se proporcione la ubicación del JDK.
 
 <br/><br/>
 
