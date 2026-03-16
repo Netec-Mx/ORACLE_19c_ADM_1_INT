@@ -172,7 +172,7 @@ El proceso moverá la base de datos del antiguo *Oracle Home* (12c) al nuevo *Or
 1. **Configurar el entorno para 19c:**
 
    ```bash
-   source /home/oracle/scripts/setEnv19c.sh
+   source /home/oracle/scripts/setEnv.sh
    ```
 
 2. **Ejecutar el Database Upgrade Assistant (DBUA):**
