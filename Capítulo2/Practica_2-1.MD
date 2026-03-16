@@ -67,6 +67,7 @@ Al finalizar la práctica, serás capaz de:
    cd /home/oracle/scripts
    cp setEnv.sh setEnv2.sh
    vi setEnv2.sh
+
    ```
 
    * Edita el archivo y actualiza las variables con los valores indicados en la tabla de referencia.
@@ -84,7 +85,12 @@ Al finalizar la práctica, serás capaz de:
 4. **Ejecutar el instalador de Oracle 12c**:
 
    ```bash
-   
+
+   # Antes de ejectutar el instalador, actualiza el ambiente a la base de datos Oracle 12c
+    cd /home/oracle/scripts
+    source setEnv2.sh
+
+   # Cambiate al directorio del software de Oracle 12c y ejecuta el instalador.
    cd /home/oracle/Downloads/database
    ./runInstaller
    ```
