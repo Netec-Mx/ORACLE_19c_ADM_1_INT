@@ -49,15 +49,19 @@ Al finalizar la práctica, serás capaz de:
 
    Esto creará el directorio **database** con todo el software de Oracle 12c.
 
-2. **Crear los directorios necesarios** para la instalación y otorgar permisos:
+2. ** Como usuario root, crea los directorios necesarios** para la instalación y otorga permisos:
 
    ```bash
+   su -
+   password: Oracle1
+
    mkdir -p /u01/app/oracle/product/12c/dbhome_2
    chown -R oracle:oinstall /u01
    chmod -R 775 /u01
+   exit
    ```
 
-3. **Configurar las variables de ambiente** para Oracle 12c:
+3. **Como usuario oracle, configurar las variables de ambiente** para Oracle 12c:
 
    ```bash
    cd /home/oracle/scripts
@@ -77,10 +81,10 @@ Al finalizar la práctica, serás capaz de:
 | `ORACLE_HOME`     | /u01/app/oracle/product/12c/dbhome_2 |
 | `ORACLE_HOSTNAME` | localhost.localdomain                |
 
-
 4. **Ejecutar el instalador de Oracle 12c**:
 
    ```bash
+   
    cd /home/oracle/Downloads/database
    ./runInstaller
    ```
@@ -111,7 +115,6 @@ show user;
 > * Oracle 19c: `/u01/app/oracle/product/19c/dbhome_1`
 
 El proceso moverá la base de datos del antiguo *Oracle Home* (12c) al nuevo *Oracle Home* (19c).
-
 
 
 #### **Paso 1.** Fase de preparación (Base 12c).
