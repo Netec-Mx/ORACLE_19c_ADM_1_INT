@@ -147,11 +147,7 @@ El proceso moverá la base de datos del antiguo *Oracle Home* (12c) al nuevo *Or
 
    ```bash
    sqlplus / as sysdba
-   SQL> @?/rdbms/admin/preupgrade_fixups.sql
-   ```
-
-   ```sqlplus
-   @?/rdbms/admin/preupgrade_fixups.sql
+   SQL> @/u01/app/oracle/cfgtoollogs/orcl2/preupgrade/preupgrade_fixups.sql
    ```
 
 4. **Crear un punto de restauración garantizado (GRP):**
@@ -160,7 +156,7 @@ El proceso moverá la base de datos del antiguo *Oracle Home* (12c) al nuevo *Or
    SHUTDOWN IMMEDIATE;
    STARTUP MOUNT;
    ALTER DATABASE ARCHIVELOG;
-   ALTER DATABASE FLASHBACK ON;
+   ALTER DATABASE FLASHBACK ON;  * Nota: si da errores define el tamaño y ruta del FRA *
    ALTER DATABASE OPEN;
    CREATE RESTORE POINT PRE_UPGRADE GUARANTEE FLASHBACK DATABASE;
    SHUTDOWN IMMEDIATE;
