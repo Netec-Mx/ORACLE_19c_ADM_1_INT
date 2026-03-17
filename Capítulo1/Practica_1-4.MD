@@ -42,7 +42,7 @@ Al finalizar la práctica, serás capaz de:
    java --version
 
    # En caso de que no exista o tengas una version anterior a la 17 ejecuta el siguiente comando
-   rpm -i  jdk-17.0.10_linux-x64_bin.rpm
+   rpm -Uhv  jdk-17.0.10_linux-x64_bin.rpm
    ```
 #### **Paso 2.** Instala el paquete de SqlDeveloper ejecutando el comando:
 
