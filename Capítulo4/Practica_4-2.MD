@@ -129,7 +129,7 @@ SELECT SYSTIMESTAMP FROM DUAL;
 
 ```
 
-**Anota la hora** obtenida (por ejemplo: `02-NOV-25 06.27.20.376933 PM -07:00`).
+**Anota la hora** obtenida (por ejemplo: `01-MAY-26 04.08.25.849651 AM -06:00`).
 
 <br/>
 
@@ -175,10 +175,11 @@ AS OF TIMESTAMP
 UPDATE VENTAS v 
 SET CANTIDAD = (
     SELECT CANTIDAD 
-    FROM VENTAS AS OF TIMESTAMP TO_TIMESTAMP('02-NOV-25 06.27.20.376933 PM -07:00', 'DD-MON-RR HH.MI.SS.FF6 PM TZR') original 
+    FROM VENTAS AS OF TIMESTAMP TO_TIMESTAMP_TZ('01-MAY-26 04.08.25.849651 AM -06:00', 'DD-MON-RR HH.MI.SS.FF6 PM TZR') original 
     WHERE original.ID = v.ID
 );
 COMMIT;
+
 ```
 <br/>
 
