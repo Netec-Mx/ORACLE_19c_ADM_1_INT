@@ -339,14 +339,15 @@ UNDO_SQL
 insert into "FLASH_USER"."VENTAS"("ID","PRODUCTO","CANTIDAD","FECHA_VENTA") 
 values ('2','Mouse','50',TO_TIMESTAMP('01-MAY-26 08.05.16.570671 AM'));
 08001600A9020000 BEGIN
+```
 
 #### **Paso 4.** Ejecutar el UNDO: Copia y ejecuta el script INSERT generado para deshacer la transacción.
+```
 insert into "FLASH_USER"."VENTAS"("ID","PRODUCTO","CANTIDAD","FECHA_VENTA") 
 values ('2','Mouse','50',TO_TIMESTAMP('01-MAY-26 08.05.16.570671 AM'));
 
 -- Verificar que la transacción ha sido revertida.
 SELECT * FROM VENTTAS;
-
 ```
 
 <br/><br/>
