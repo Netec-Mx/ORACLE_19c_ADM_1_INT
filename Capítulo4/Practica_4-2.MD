@@ -263,12 +263,12 @@ Nivel de Aplicación: PDB
 
 #### **Paso 1.** Prerrequisito: Conéctate a la PDB y ejecuta 
 ```sql
-ALTER TABLE VENTAS ENABLE ROW MOVEMENT;.
+ALTER TABLE VENTAS ENABLE ROW MOVEMENT;
 ```
 
 #### **Paso 2.** Registrar T0: Ejecuta 
 ```sql
-SELECT SYSTIMESTAMP FROM DUAL; y anota la hora (T0).
+SELECT SYSTIMESTAMP FROM DUAL; y anota la hora (01-MAY-26 04.07.49.907008 AM).
 ```
 
 #### **Paso 3.** Simular Error: Ejecuta 
@@ -279,6 +279,7 @@ DELETE FROM VENTAS WHERE CANTIDAD < 50; seguido de COMMIT;
 #### **Paso 4.** Ejecutar Flashback: Ejecuta 
 ```sql
 FLASHBACK TABLE VENTAS TO TIMESTAMP TO_TIMESTAMP('T0', 'YYYY-MM-DD HH24:MI:SS');
+FLASHBACK TABLE VENTAS TO TIMESTAMP TO_TIMESTAMP_TZ('01-MAY-26 04.07.49.907008 AM','DD-MON-RR HH.MI.SS.FF6 PM TZR');
 ```
 
 <br/><br/>
