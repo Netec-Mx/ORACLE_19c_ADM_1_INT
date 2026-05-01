@@ -278,7 +278,7 @@ DELETE FROM VENTAS WHERE CANTIDAD < 50; seguido de COMMIT;
 SELECT * FROM VENTAS;
 ```
 
-#### **Paso 4.** Ejecutar Flashback: Ejecuta 
+#### **Paso 4.** Ejecutar Flashback: 
 ```sql
 FLASHBACK TABLE VENTAS TO TIMESTAMP TO_TIMESTAMP_TZ('01-MAY-26 04.07.49.907008 AM','DD-MON-RR HH.MI.SS.FF6 PM TZR');
 -- Verifica que la tabla se haya revertido al tiempo anotado
