@@ -274,13 +274,14 @@ SELECT SYSTIMESTAMP FROM DUAL; y anota la hora (01-MAY-26 04.07.49.907008 AM).
 #### **Paso 3.** Simular Error: Ejecuta 
 ```sql
 DELETE FROM VENTAS WHERE CANTIDAD < 50; seguido de COMMIT;
--- Confirma los cmabios
+-- Confirma los cambios
 SELECT * FROM VENTAS;
 ```
 
 #### **Paso 4.** Ejecutar Flashback: Ejecuta 
 ```sql
 FLASHBACK TABLE VENTAS TO TIMESTAMP TO_TIMESTAMP_TZ('01-MAY-26 04.07.49.907008 AM','DD-MON-RR HH.MI.SS.FF6 PM TZR');
+-- Verifica que la tabla se haya revertido al tiempo anotado
 ```
 
 <br/><br/>
