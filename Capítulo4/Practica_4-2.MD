@@ -287,12 +287,12 @@ FLASHBACK TABLE VENTAS TO TIMESTAMP TO_TIMESTAMP_TZ('01-MAY-26 04.07.49.907008 A
 <br/><br/>
 
 ### Tarea 6. Flashback Transaction Query / Transaction
+--- El ejercicio consiste en realizar una transacción, identificarla y después revertirla.
+Nivel de Aplicación: PDB (PDB_VENTAS)
 
-Nivel de Aplicación: PDB
-
-
-#### **Paso 1.** Ejecutar Transacción: Ejecuta 
+#### **Paso 1.** Ejecutar Transacción: 
 ```sql
+-- Como usuario FLASH_USER ejecutar lo siguiente:
 DELETE FROM VENTAS WHERE ID = 2;
 COMMIT;
 ```
