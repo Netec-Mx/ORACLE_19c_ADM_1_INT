@@ -282,14 +282,33 @@ SELECT * FROM VENTAS;
 ```sql
 FLASHBACK TABLE VENTAS TO TIMESTAMP TO_TIMESTAMP_TZ('01-MAY-26 04.07.49.907008 AM','DD-MON-RR HH.MI.SS.FF6 PM TZR');
 -- Verifica que la tabla se haya revertido al tiempo anotado
+EXIT
 ```
 
 <br/><br/>
 
 ### Tarea 6. Flashback Transaction Query / Transaction
---- El ejercicio consiste en realizar una transacción, identificarla y después revertirla.
+```
+El ejercicio consiste en realizar una transacción, identificarla y después revertirla.
 Nivel de Aplicación: PDB (PDB_VENTAS)
 
+Prerequisitos:
+
+-- Habilitar Logs. Conectado como usuario SYS en el contenedor CDB$ROOT
+
+sqlplus / as sysdba
+ALTER DATABASE ADD SUPPLEMENTAL LOG DATA;	-- Activar el registro detallado de cambios.
+
+-- Cambiarse a la base de datos PDB_VENTAS
+ALTER SESSION SET CONTAINER = PDB_VENTAS;
+
+-- Como usuario SYS dar acceso a las funciones de reconstrucción SQL.
+GRANT EXECUTE ON DBMS_FLASHBACK_TRANSACTION TO flash_user;	
+
+-- Permitir que el usuario vea el historial de transacciones.
+GRANT SELECT ANY TRANSACTION TO flash_user;	
+
+```
 #### **Paso 1.** Ejecutar Transacción: 
 ```sql
 -- Como usuario FLASH_USER ejecutar lo siguiente:
@@ -299,16 +318,36 @@ COMMIT;
 
 #### **Paso 2.** Obtener Transaction ID: Ejecuta 
 ```sql
+SELECT undo_sql FROM flashback_transaction_query WHERE xid = HEXTORAW('...');
+
 SELECT VERSIONS_XID FROM VENTAS VERSIONS BETWEEN TIMESTAMP MINVALUE AND MAXVALUE WHERE ID = 2;
---- para obtener el XID (ej. 0A001F00C7F90000).
+--- para obtener el XID (ej. 08001600A9020000).
 ```
 
 #### **Paso 3.** Generar Script de UNDO: Ejecuta 
 ```sql
-EXEC DBMS_FLASHBACK.GET_UNDO_SQL('0A001F00C7F90000'); --- en la PDB para generar el SQL de reversión.
-```
+SELECT xid, operation, undo_sql 
+FROM flashback_transaction_query 
+WHERE xid = HEXTORAW(  2    3  '08001600A9020000');
+
+-- Veras algo como:
+XID		 OPERATION
+---------------- --------------------------------
+UNDO_SQL
+--------------------------------------------------------------------------------
+08001600A9020000 DELETE
+insert into "FLASH_USER"."VENTAS"("ID","PRODUCTO","CANTIDAD","FECHA_VENTA") 
+values ('2','Mouse','50',TO_TIMESTAMP('01-MAY-26 08.05.16.570671 AM'));
+08001600A9020000 BEGIN
 
 #### **Paso 4.** Ejecutar el UNDO: Copia y ejecuta el script INSERT generado para deshacer la transacción.
+insert into "FLASH_USER"."VENTAS"("ID","PRODUCTO","CANTIDAD","FECHA_VENTA") 
+values ('2','Mouse','50',TO_TIMESTAMP('01-MAY-26 08.05.16.570671 AM'));
+
+-- Verificar que la transacción ha sido revertida.
+SELECT * FROM VENTTAS;
+
+```
 
 <br/><br/>
 
