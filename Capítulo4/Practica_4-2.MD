@@ -71,6 +71,10 @@ Al finalizar esta práctica, serás capaz de **utilizar las tecnologías Flashba
    -- 1. Crear el usuario
    CREATE USER FLASH_USER IDENTIFIED BY oracle_4U DEFAULT TABLESPACE users;
 
+   -- 2. Crear el TABLESPACE USERS/Datafile
+   CREATE TABLESPACE USERS DATAFILE '/u01/app/oracle/oradata/ORCLCDB/pdb_ventas/users01.dbf' 
+   SIZE 250M AUTOEXTEND ON NEXT 10M MAXSIZE UNLIMITED;
+
    -- 2. Otorgar privilegios de conexión y acceso al diccionario
    GRANT CREATE SESSION, RESOURCE TO FLASH_USER;
    GRANT SELECT ANY DICTIONARY TO FLASH_USER;
