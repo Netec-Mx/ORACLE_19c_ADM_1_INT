@@ -49,7 +49,7 @@ Al finalizar esta práctica, serás capaz de **utilizar las tecnologías Flashba
    ```sql
    CREATE PLUGGABLE DATABASE PDB_VENTAS 
    ADMIN USER pdbadmin IDENTIFIED BY oracle_4U
-   FILE_NAME_CONVERT = ('/pdbseed/', '/pdb_ventas/');
+   FILE_NAME_CONVERT = ('/pdbseed/', '/pdb_ventas/')
    DEFAULT TABLESPACE users DATAFILE '/u01/app/oracle/oradata/ORCL/pdb_ventas/users01.dbf' SIZE 250M;
    -- AUTOSAVE STATE;
    
