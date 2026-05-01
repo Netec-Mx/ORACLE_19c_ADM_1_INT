@@ -65,6 +65,9 @@ Al finalizar esta práctica, serás capaz de **utilizar las tecnologías Flashba
 3. Crea el usuario FLASH_USER
 
    ```sql
+   -- Cambiate a la base de datos PDB_VENTAS
+   ALTER SESSION SER CONTAINER=PDB_VENTAS;
+   
    -- 1. Crear el usuario
    CREATE USER FLASH_USER IDENTIFIED BY oracle_4U DEFAULT TABLESPACE users;
 
