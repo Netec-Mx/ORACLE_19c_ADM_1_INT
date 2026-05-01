@@ -65,23 +65,24 @@ Al finalizar esta práctica, serás capaz de **utilizar las tecnologías Flashba
 3. Crea el usuario FLASH_USER
 
    ```sql
-   -- Cambiate a la base de datos PDB_VENTAS
+   -- 1. Cambiate a la base de datos PDB_VENTAS
    ALTER SESSION SET CONTAINER=PDB_VENTAS;
-   
-   -- 1. Crear el usuario
-   CREATE USER FLASH_USER IDENTIFIED BY oracle_4U DEFAULT TABLESPACE users;
 
-   -- 2. Crear el TABLESPACE USERS/Datafile
+   -- 2. Crea el TABLESPACE USERS
    CREATE TABLESPACE USERS DATAFILE '/u01/app/oracle/oradata/ORCLCDB/pdb_ventas/users01.dbf' 
    SIZE 250M AUTOEXTEND ON NEXT 10M MAXSIZE UNLIMITED;
 
-   -- 2. Otorgar privilegios de conexión y acceso al diccionario
+   -- 3. Crear el usuario FLASH_USER
+   CREATE USER FLASH_USER IDENTIFIED BY oracle_4U DEFAULT TABLESPACE users;
+   
+   -- 4. Otorgar privilegios de conexión y acceso al diccionario
    GRANT CREATE SESSION, RESOURCE TO FLASH_USER;
    GRANT SELECT ANY DICTIONARY TO FLASH_USER;
    ALTER USER FLASH_USER QUOTA 500M ON USERS;
 
-   -- 3. Otorgar el privilegio clave de Flashback a nivel de tabla
+   -- 5. Otorgar el privilegio clave de Flashback a nivel de tabla
    GRANT FLASHBACK ANY TABLE TO FLASH_USER;
+   EXIT
 
    ```
 
@@ -89,6 +90,9 @@ Al finalizar esta práctica, serás capaz de **utilizar las tecnologías Flashba
 4. Ejecuta el siguiente script para crear una tabla:
 
    ```sql
+   -- Conéctate a la PDB_VENTAS con el usuario FLASH_USER
+   sqlplus flash_user/oracle_4U@//localhost:1521/pdb_ventas
+
    Asunción: Usaremos una tabla llamada VENTAS para la mayoría de los ejemplos.
 
    -- Script de preparación de la tabla
