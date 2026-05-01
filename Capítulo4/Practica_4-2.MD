@@ -200,19 +200,35 @@ Nivel de Aplicación: PDB
 Ejecuta 
 ```sql
 UPDATE VENTAS SET CANTIDAD = 15 WHERE ID = 1;
-COMMIT
+COMMIT;
 ```
 
 #### **Paso 2.** Modificación 2 
 ```sql
 UPDATE VENTAS SET CANTIDAD = 20 WHERE ID = 1;
-COMMIT;.
+COMMIT;
 ```
 3.	Consultar Versiones: Ejecuta 
 ```sql
 SELECT VERSIONS_STARTSCN, VERSIONS_ENDSCN, VERSIONS_XID, CANTIDAD 
 FROM VENTAS 
 VERSIONS BETWEEN TIMESTAMP MINVALUE AND MAXVALUE WHERE ID = 1;
+
+-- Veras algo similar a:
+
+VERSIONS_START   SCN VERSIONS_END   SCN VERSIONS_XID	     CANTIDAD
+
+----------------- --------------- ---------------- ----------
+
+	  4598997		                    070000006C020000	   20
+
+	  4598946	  4598997              0A001E0081020000	   15
+
+	  4598805	  4598946              09001C0075020000	   10
+
+			        4598805			                            0
+
+
 ```
 <br/>
 
