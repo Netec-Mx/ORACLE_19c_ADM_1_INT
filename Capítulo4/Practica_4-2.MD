@@ -164,7 +164,7 @@ Usa la marca de tiempo registrada en el paso 2 para visualizar los valores antes
 
 SELECT * FROM VENTAS 
 AS OF TIMESTAMP 
-    TO_TIMESTAMP_TZ('02-NOV-25 06.27.20.376933 PM -07:00', 'DD-MON-RR HH.MI.SS.FF6 PM TZR');
+    TO_TIMESTAMP_TZ('01-MAY-26 04.08.25.849651 AM -06:00', 'DD-MON-RR HH.MI.SS.FF6 PM TZR');
 ```
 
 <br/>
