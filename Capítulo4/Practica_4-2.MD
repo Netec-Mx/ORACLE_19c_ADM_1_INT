@@ -306,11 +306,14 @@ ALTER SESSION SET CONTAINER = PDB_VENTAS;
 GRANT EXECUTE ON DBMS_FLASHBACK_TRANSACTION TO flash_user;	
 
 -- Permitir que el usuario vea el historial de transacciones.
-GRANT SELECT ANY TRANSACTION TO flash_user;	
-
+GRANT SELECT ANY TRANSACTION TO flash_user;
+EXIT
 ```
 #### **Paso 1.** Ejecutar Transacción: 
 ```sql
+-- Conectarse al usuario FLASH_USER
+sqlplus flash_user/oracle_4U@//localhost:1521/pdb_ventas
+
 -- Como usuario FLASH_USER ejecutar lo siguiente:
 DELETE FROM VENTAS WHERE ID = 2;
 COMMIT;
