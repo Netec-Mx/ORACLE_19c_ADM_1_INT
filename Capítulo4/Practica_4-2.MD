@@ -357,103 +357,15 @@ SELECT * FROM VENTAS;
 
 <br/><br/>
 
-### Tarea 7. Flashback Database (Recuperación física de la base de datos)
-
-#### **Paso 1.** Verifica/Habilita Flashback.
-
-```sql
--- Conectate al contenedor y verifica si FLASHBACK esta en ON.
-
-SELECT FLASHBACK_ON FROM V$DATABASE;
-
--- Si el query devuelve NO habilita el flashback a nivel contenedor.
-
-SHUTDOWN IMMEDIATE
-STARTUP MOUNT
-ALTER DATABASE FLASHBACK ON;
-ALTER DATABASE OPEN;
-
-```
-
-Esto activa la generación de **Flashback Logs** en la **FRA**.
-
-<br/>
-
-#### **Paso 2.** Crea un punto de restauración garantizado.
-
-```sql
-
-CREATE RESTORE POINT RP_PRE_ERROR GUARANTEE FLASHBACK DATABASE;
-```
-<br/>
-
-Crea un *restore point* llamado **RP_PRE_ERROR** que permitirá revertir la base de datos a ese momento.
-
-<br/>
-
-#### **Paso 3.** Simula un error fatal.
-
-```sql
-DROP TABLESPACE USERS INCLUDING CONTENTS AND DATAFILES;
-COMMIT;
-```
-
-Esto elimina un tablespace crítico de la base de datos.
-
-<br/>
-
-#### **Paso 4.** Prepara la base de datos para hacer el  Flashback.
-
-```sql
-SHUTDOWN IMMEDIATE;
-STARTUP MOUNT;
-```
-
-La base de datos debe estar **montada** para ejecutar la operación de Flashback.
-
-<br/>
-
-#### **Paso 5.** Ejecuta el Flashback.
-
-Conéctate a RMAN y ejecuta:
-
-```bash
-RMAN TARGET /
-FLASHBACK DATABASE TO RESTORE POINT RP_PRE_ERROR;
-```
-
-Este comando **rebobina** la base de datos al punto garantizado, utilizando los **Flashback Logs** y **Archived Logs**.
-
-<br/>
-
-#### **Paso 6.** Abre la base de datos.
-
-```sql
-ALTER DATABASE OPEN RESETLOGS;
-```
-
-Abre la base de datos en una nueva *incarnation*, lista para operar.
-
-
-<br/><br/>
-
-
 ## Resultado esperado
 
+```
 Al finalizar esta práctica:
 
 * Habrás comprendido y aplicado los mecanismos **Flashback Query** y **Flashback Database**.
 * Lograrás recuperar datos eliminados o modificados por error, consultando el estado de la tabla a un instante anterior.
-* Podrás **revertir la base de datos completa** a un punto seguro, utilizando un *restore point* garantizado.
-* La base de datos deberá abrirse correctamente tras el comando:
-
-  ```sql
-  ALTER DATABASE OPEN RESETLOGS;
-  ```
-* Confirmando que la recuperación fue exitosa.
-  <br/>
-
-  ```
+<br/><br/>
+```
   Nota Importante sobre FLASHBACK DATABASE:
   El privilegio para ejecutar el comando FLASHBACK DATABASE (que opera a nivel de CDB).
   No puede ser otorgado a un usuario creado solo en la PDB. 
