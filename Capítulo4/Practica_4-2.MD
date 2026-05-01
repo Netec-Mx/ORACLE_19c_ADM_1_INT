@@ -323,7 +323,7 @@ VERSIONS_XID
 ----------------
 08001600A9020000
 02001A007A020000
---- para obtener el XID (ej. 08001600A9020000).
+--- el XID (ej. 08001600A9020000).
 ```
 
 #### **Paso 3.** Generar Script de UNDO: Ejecuta 
