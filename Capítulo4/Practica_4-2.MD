@@ -364,7 +364,6 @@ Al finalizar esta práctica:
 
 * Habrás comprendido y aplicado los mecanismos **Flashback Query** y **Flashback Database**.
 * Lograrás recuperar datos eliminados o modificados por error, consultando el estado de la tabla a un instante anterior.
-<br/><br/>
 ```
   Nota Importante sobre FLASHBACK DATABASE:
   El privilegio para ejecutar el comando FLASHBACK DATABASE (que opera a nivel de CDB).
